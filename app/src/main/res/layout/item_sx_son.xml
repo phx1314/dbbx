@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#fff" android:orientation="vertical">
+     <TextView android:id="@+id/mTextView" style="@style/text_style_13_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bt_grey" android:gravity="center" android:paddingBottom="@dimen/j8dp" android:paddingLeft="@dimen/j12dp" android:paddingRight="@dimen/j12dp" android:paddingTop="@dimen/j8dp" android:text="办公表单" />
+</LinearLayout>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#ffffff" android:orientation="vertical">
+     <LinearLayout android:id="@+id/mLinearLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="@dimen/j10dp">
+          <TextView android:id="@+id/mTextView_left" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="被保人年龄:" />
+          <TextView style="@style/text_style_15_gray" android:layout_width="wrap_content" android:drawablePadding="@dimen/j5dp" android:layout_height="wrap_content" android:layout_weight="1" android:drawableRight="@drawable/bt_xiala_n" android:gravity="right|center_vertical" android:text="请选择" />
+     </LinearLayout>
+     <TextView android:id="@+id/mTextView_content" style="@style/text_style_13_gray" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="@dimen/j10dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:text="请选请选择请选择请选择请选择请请选请选择请选择请选择请选择请选择请选择择请选请选择请选择请选择请选择请选择请选择择选择请选择择" />
+     <ImageView android:layout_width="match_parent" android:layout_height="1px" android:layout_marginLeft="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:background="@color/tyD1" />
+</LinearLayout>
+

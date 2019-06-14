@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <com.ndtlg.dbbx.view.FreeRecyclerView
+        android:id="@+id/mFreeRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/tyD1" />
+
+    <TextView
+        style="@style/text_style_11_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/j10dp"
+        android:gravity="center"
+        android:text="注:如产品价格或保险范围与实际合同有差异，以实际保险合同为准。"
+        android:textColor="@color/A" />
+
+    <TextView
+        android:id="@+id/mTextView_tb"
+        style="@style/text_style_15_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/j15dp"
+        android:layout_marginLeft="@dimen/j15dp"
+        android:layout_marginRight="@dimen/j15dp"
+        android:layout_marginTop="@dimen/j10dp"
+        android:background="@drawable/bt_xingbie_h"
+        android:gravity="center"
+        android:padding="@dimen/j10dp"
+        android:text="投保途径"
+        android:textColor="@color/A" />
+</LinearLayout>
+

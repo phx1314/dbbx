@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+     <string name="id_db">com.ndtlg.dbbx.item.DbCard</string>
+     <string name="id_dbtop">com.ndtlg.dbbx.item.DbTopCard</string>
+</resources>
+

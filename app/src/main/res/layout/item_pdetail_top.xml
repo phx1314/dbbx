@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/mLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/j10dp">
+
+        <TextView
+            android:id="@+id/mTextView_left"
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="被保人年龄:" />
+
+        <EditText
+            android:id="@+id/mEditText"
+            style="@style/text_style_15_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j8dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="请输入"
+            android:singleLine="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/mTextView_content"
+            style="@style/text_style_15_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/j5dp"
+            android:drawableRight="@drawable/bt_jintu_n"
+            android:gravity="right|center_vertical" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/j10dp"
+        android:layout_marginRight="@dimen/j10dp"
+        android:background="@color/tyD1" />
+</LinearLayout>
+

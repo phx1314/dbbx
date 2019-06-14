@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+     <dimen name="j10dp">22.5dp</dimen>
+     <dimen name="j15dp">33.75dp</dimen>
+     <dimen name="j35dp">78.75dp</dimen>
+     <dimen name="j5dp">11.25dp</dimen>
+     <dimen name="j8dp">18.0dp</dimen>
+     <dimen name="j20dp">45.0dp</dimen>
+     <dimen name="j60dp">135.0dp</dimen>
+     <dimen name="f35dp">-78.75dp</dimen>
+     <dimen name="j3dp">6.75dp</dimen>
+     <dimen name="j12dp">27.0dp</dimen>
+     <dimen name="j13dp">29.25dp</dimen>
+     <dimen name="j40dp">90.0dp</dimen>
+     <dimen name="j70dp">157.5dp</dimen>
+     <dimen name="j2dp">4.5dp</dimen>
+     <dimen name="j90dp">202.5dp</dimen>
+     <dimen name="j85dp">191.25dp</dimen>
+     <dimen name="j45dp">101.25dp</dimen>
+     <dimen name="j65dp">146.25dp</dimen>
+     <dimen name="j120dp">270.0dp</dimen>
+     <dimen name="j4dp">9.0dp</dimen>
+     <dimen name="j16dp">36.0dp</dimen>
+     <dimen name="j50dp">112.5dp</dimen>
+     <dimen name="j30dp">67.5dp</dimen>
+     <dimen name="j100dp">225.0dp</dimen>
+     <dimen name="j25dp">56.25dp</dimen>
+     <dimen name="j80dp">180.0dp</dimen>
+     <dimen name="j106dp">238.5dp</dimen>
+     <dimen name="j14dp">31.5dp</dimen>
+     <dimen name="j1dp">2.25dp</dimen>
+</resources>
+

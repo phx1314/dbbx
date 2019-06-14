@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jx"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j3dp"
+        android:background="@color/jx" />
+
+    <TextView
+        android:id="@+id/mTextView_1"
+        style="@style/text_style_15_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableRight="@drawable/bt_jintu_n"
+        android:padding="@dimen/j12dp"
+        android:text="关于我们" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/tyD1" />
+
+    <TextView
+        android:id="@+id/mTextView_2"
+        style="@style/text_style_15_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:drawableRight="@drawable/bt_jintu_n"
+        android:padding="@dimen/j12dp"
+        android:text="意见反馈" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/tyD1" />
+
+    <LinearLayout
+        android:id="@+id/mLinearLayout_qkhc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:padding="@dimen/j13dp">
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="清空缓存" />
+
+        <TextView
+            android:id="@+id/mTextView_qkhc"
+            style="@style/text_style_13_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawablePadding="@dimen/j5dp"
+            android:drawableRight="@drawable/bt_jintu_n"
+            android:gravity="center_vertical"
+            android:text="255k" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mTextView_logout"
+        style="@style/text_style_15_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/j10dp"
+        android:layout_marginLeft="@dimen/j15dp"
+        android:layout_marginRight="@dimen/j15dp"
+        android:layout_marginTop="@dimen/j15dp"
+        android:background="@drawable/bt_xingbie_h"
+        android:gravity="center"
+        android:padding="@dimen/j10dp"
+        android:text="退出登录"
+        android:textColor="@color/A" />
+</LinearLayout>
+

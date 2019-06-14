@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:paddingBottom="@dimen/j10dp" android:paddingLeft="@dimen/j15dp" android:paddingRight="@dimen/j15dp" android:paddingTop="@dimen/j10dp">
+          <ImageView android:layout_width="@dimen/j14dp" android:layout_height="@dimen/j14dp" android:background="@drawable/ic_sousuo" />
+          <TextView android:id="@+id/mTextView" style="@style/text_style_13_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j13dp" android:text="重庆" />
+     </LinearLayout>
+</LinearLayout>
+

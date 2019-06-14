@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Base
+    appid="appid"
+    baseuri="http://insurance.inrnui.com/Api"
+    temppath="dbbx"
+    updateuri=""
+    usesdcard="true">
+    <param name="ErrorUpdateUrl"></param>
+    <param name="source">1</param>
+    <param name="isCheck">0</param>
+    <param name="WebServiceNamespace">value</param>
+    <param name="WebServiceUrl">value</param>
+    <param name="DefaultFragment">com.ndtlg.dbbx.frg.FrgLoading</param>
+</Base>

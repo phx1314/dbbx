@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        applicationId "com.ndtlg.dbbx"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file("F:\\小工具\\小工具\\ntdlg.keystore")
+            storePassword "ntdlg123"
+            keyAlias "20"
+            keyPassword "ntdlg123"
+        }
+    }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+    }
+}
+
+dependencies {
+    compile project(':frameWidget')
+}

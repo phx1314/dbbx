@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="@dimen/j90dp"
+        android:layout_height="@dimen/j90dp">
+
+        <LinearLayout
+            android:layout_width="@dimen/j80dp"
+            android:layout_height="@dimen/j80dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_baoxian"
+            android:orientation="vertical"
+            android:padding="@dimen/j8dp">
+
+            <TextView
+                android:id="@+id/mTextView_title"
+                style="@style/text_style_11_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="中国人寿" />
+
+            <TextView
+                android:id="@+id/mTextView_content"
+                style="@style/text_style_13_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="隐藏相隐藏相同隐藏相同隐藏相同隐藏相同同" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom">
+
+                <TextView
+                    android:id="@+id/mTextView_price"
+                    style="@style/text_style_11_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="205"
+                    android:textColor="@color/A"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/text_style_11_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="元/年起"
+                    android:textSize="9sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/mImageView_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/bt_shan_n" />
+    </RelativeLayout>
+</LinearLayout>
+

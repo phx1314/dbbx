@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ndtlg.dbbx">
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name="com.ndtlg.dbbx.Mapplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme_pub">
+        <activity
+            android:name="com.mdx.framework.activity.LoadingAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/actNNS">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.framewidget.zxing.SimpleScannerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mdx.framework.activity.NoTitleAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_pub"
+            android:windowSoftInputMode="stateHidden|adjustNothing"
+            tools:replace="android:windowSoftInputMode,theme" />
+        <activity
+            android:name="com.mdx.framework.activity.TitleAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_pub"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:replace="android:theme" />
+        <activity
+            android:name="com.mdx.framework.activity.IndexAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_pub"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:replace="android:theme" />
+
+        <activity
+            android:name="com.ndtlg.dbbx.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name" />
+
+        <!--meta-data需要写在application中"api_key"com.baidu.lbsapi.API_KEY -->
+        <!-- above activity that demo required,has nothing to with umeng sdk -->
+        <!-- *************************    related to Share START **************************** -->
+        <!-- Share edit page -->
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:theme="@style/actNNS"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.umeng.socialize.editorpage.ShareActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/actNNS" />
+        <!-- tencent -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1107999603" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="false" />
+        <uses-library android:name="android.test.runner" />
+        <!-- *************************     related to Share END **************************** -->
+        <!-- umengAppKey，replace to yours -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5c340ee4f1f556f326000973" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="" />
+    </application>
+
+</manifest>

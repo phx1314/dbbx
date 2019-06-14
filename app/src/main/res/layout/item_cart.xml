@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTextView_typename"
+        style="@style/text_style_13_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/j10dp"
+        android:text="分类名称" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/mLinearLayout_delete"
+            android:layout_width="@dimen/j60dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/mLinearLayout_content"
+            android:layout_alignTop="@+id/mLinearLayout_content">
+
+            <Button
+                android:id="@+id/mButton_delete"
+                style="@style/text_style_15_white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/A"
+                android:text="删除" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mLinearLayout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/mCheckBox"
+                android:layout_width="@dimen/j20dp"
+                android:layout_height="@dimen/j20dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/j10dp"
+                android:background="@drawable/checked"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/j8dp">
+
+                    <com.mdx.framework.widget.MImageView
+                        android:id="@+id/mMImageView"
+                        android:layout_width="@dimen/j65dp"
+                        android:layout_height="@dimen/j65dp"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/j10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/mTextView_title"
+                                style="@style/text_style_15_black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="瑞泰退台重疾险" />
+
+                            <TextView
+                                android:id="@+id/mTextView_xh"
+                                style="@style/text_style_11_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="780人喜欢" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/mTextView_age"
+                            style="@style/text_style_11_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/j2dp"
+                            android:text="保障年龄：30天-70周岁" />
+
+                        <TextView
+                            android:id="@+id/mTextView_qx"
+                            style="@style/text_style_11_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/j2dp"
+                            android:text="保障期限：终身" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:id="@+id/mTextView_price"
+                                style="@style/text_style_15_black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="205"
+                                android:textColor="@color/A"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                style="@style/text_style_11_black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:singleLine="true"
+                                android:text="元/年起" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/tyD1" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+

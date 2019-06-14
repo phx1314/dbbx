@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/j50dp"
+        android:background="@drawable/new_action_while_4"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mTextView_title"
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j5dp"
+            android:padding="@dimen/j15dp"
+            android:text="投保途径"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            style="@style/text_style_13_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j20dp"
+            android:paddingLeft="@dimen/j15dp"
+            android:paddingRight="@dimen/j15dp"
+            android:text="投保官网" />
+
+        <TextView
+            style="@style/text_style_13_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j20dp"
+            android:paddingLeft="@dimen/j15dp"
+            android:paddingRight="@dimen/j15dp"
+            android:text="或" />
+
+        <TextView
+            style="@style/text_style_13_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j20dp"
+            android:paddingLeft="@dimen/j15dp"
+            android:paddingRight="@dimen/j15dp"
+            android:text="投保电话 " />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/j30dp"
+            android:background="@color/tyD1" />
+
+        <TextView
+            android:id="@+id/mTextView_gb"
+            style="@style/text_style_15_black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/j40dp"
+            android:gravity="center"
+            android:text="关闭"
+            android:textColor="#2B67FD"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>
+

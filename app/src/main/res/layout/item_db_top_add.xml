@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/mImageView_add"
+        android:layout_width="@dimen/j80dp"
+        android:layout_height="@dimen/j80dp"
+        android:layout_marginLeft="@dimen/j10dp"
+        android:layout_marginRight="@dimen/j10dp"
+        android:background="@drawable/bt_tjbx_n" />
+</LinearLayout>
+

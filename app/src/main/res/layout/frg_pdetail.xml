@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mdx.framework.widget.MImageView
+            android:id="@+id/mMImageView_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/j120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_avatar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dip">
+
+            <ImageButton
+                android:id="@+id/mImageButton_back"
+                android:layout_width="45dip"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:src="@drawable/bt_back_n" />
+
+            <ImageButton
+                android:id="@+id/mImageButton_fx"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="#00000000"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingRight="@dimen/j10dp"
+                android:src="@drawable/bt_fenxiang_n" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/j10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/mTextView_title"
+                        style="@style/text_style_17_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="瑞泰退台重疾险" />
+
+                    <TextView
+                        android:id="@+id/mTextView_qx"
+                        style="@style/text_style_13_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/j4dp"
+                        android:text="保障期限：终身" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/mTextView_sc"
+                    style="@style/text_style_15_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/j8dp"
+                    android:background="@drawable/bt_grey"
+                    android:drawableLeft="@drawable/bt_shoucang_n"
+                    android:drawablePadding="@dimen/j5dp"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/j12dp"
+                    android:paddingRight="@dimen/j12dp"
+                    android:text="收藏"
+                    android:textColor="@color/A" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/j10dp"
+                android:layout_marginRight="@dimen/j10dp"
+                android:background="@color/tyD1" />
+
+            <com.framewidget.view.MListView
+                android:id="@+id/mMListView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:fadingEdge="none"
+                android:listSelector="#00000000" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j8dp"
+                android:background="@color/jx" />
+
+            <TextView
+                style="@style/text_style_13_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_quanyi"
+                android:drawablePadding="@dimen/j8dp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/j10dp"
+                android:text="保障权益/保额"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/j10dp"
+                android:layout_marginRight="@dimen/j10dp"
+                android:background="@color/tyD1"
+                android:visibility="gone" />
+
+            <com.framewidget.view.MListView
+                android:id="@+id/mMListView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:fadingEdge="none"
+                android:listSelector="#00000000"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j8dp"
+                android:background="@color/jx" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/j10dp">
+
+                <TextView
+                    style="@style/text_style_15_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查看" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/mTextView_tk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="《保险条款》"
+                        android:textColor="@color/A"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/mTextView_jbxx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/j10dp"
+                        android:text="《保险公司基本信息》"
+                        android:textColor="@color/A"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/jx"
+                android:minHeight="@dimen/j16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/j15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mTextView_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1200.00"
+                android:textColor="@color/A"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元"
+                android:textColor="@color/A"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/mTextView_db"
+            style="@style/text_style_15_white"
+            android:layout_width="@dimen/j100dp"
+            android:layout_height="match_parent"
+            android:background="@color/A"
+            android:gravity="center"
+            android:text="加入对比" />
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/tyD1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/j40dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/j70dp"
+            android:layout_height="match_parent"
+            android:background="#FAFAFA"
+            android:gravity="center"
+            android:paddingBottom="@dimen/j5dp"
+            android:paddingLeft="@dimen/j3dp"
+            android:paddingRight="@dimen/j3dp"
+            android:paddingTop="@dimen/j5dp">
+
+            <TextView
+                android:id="@+id/mTextView_title"
+                style="@style/text_style_13_black"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawablePadding="@dimen/j2dp"
+                android:drawableRight="@drawable/bt_wenhao_n"
+                android:gravity="center_vertical"
+                android:text="适用年龄" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/tyD1" />
+
+        <com.ndtlg.dbbx.view.AnimateScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:requiresFadingEdge="none"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/mLinearLayout_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+        </com.ndtlg.dbbx.view.AnimateScrollView>
+    </LinearLayout>
+</LinearLayout>
+

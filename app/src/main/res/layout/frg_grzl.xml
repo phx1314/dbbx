@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/j10dp"
+        android:paddingRight="@dimen/j15dp">
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="头像" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.mdx.framework.widget.MImageView
+            android:id="@+id/mMImageView_tou"
+            android:layout_width="@dimen/j45dp"
+            android:layout_height="@dimen/j45dp"
+            android:src="@drawable/morentouxiang_n" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j10dp"
+            android:src="@drawable/bt_jintu_n" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/tyD1" />
+
+    <LinearLayout
+        android:id="@+id/mLinearLayout_nicheng"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/j10dp"
+        android:paddingRight="@dimen/j15dp">
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="昵称" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/mTextView_name"
+            style="@style/text_style_15_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j10dp"
+            android:src="@drawable/bt_jintu_n" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/jx" />
+</LinearLayout>
+
