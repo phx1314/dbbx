@@ -18,12 +18,25 @@ public class ModelDbDetail implements Serializable {
      */
 
     public int status;
+    public boolean ischecked;
     public String action;
     public String msg;
     public DataBean data;
 
     public static class DataBean {
         public List<ColumnsBean> columns;
+
+        public OtherBean other;
+
+        public static class OtherBean {
+            /**
+             * url : 官网网址
+             * tel : 13800010001
+             */
+
+            public String url;
+            public long tel;
+        }
 
         public static class ColumnsBean {
             /**
@@ -46,8 +59,11 @@ public class ModelDbDetail implements Serializable {
                  */
 
                 public String name;
+                public String tips;
                 public String value;
             }
         }
     }
+
+
 }

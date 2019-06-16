@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mdx.framework.Frame;
-import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.activity.NoTitleAct;
 import com.mdx.framework.adapter.MAdapter;
 import com.mdx.framework.utility.Helper;
 import com.ndtlg.dbbx.frg.FrgPdetail;
@@ -53,7 +53,7 @@ public class AdaPub extends MAdapter<ModelTj.DataBean.ColumnsBean> {
                 if (!TextUtils.isEmpty(from) && from.equals("FrgSelect")) {
                     Frame.HANDLES.sentAll("FrgSelect", 0, item.contrast_id);
                 } else {
-                    Helper.startActivity(getContext(), FrgPdetail.class, TitleAct.class, "id", item.id);
+                    Helper.startActivity(getContext(), FrgPdetail.class, NoTitleAct.class, "id", item.id);
                 }
             }
         });

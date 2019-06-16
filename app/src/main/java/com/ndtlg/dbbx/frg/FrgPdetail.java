@@ -89,6 +89,18 @@ public class FrgPdetail extends BaseFrg {
                 loadJsonUrl("20012", new Gson().toJson(mBeanSc));
             }
         });
+        mImageButton_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FrgPdetail.this.finish();
+            }
+        });
+        mImageButton_fx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                F.shareText("分享", "http://www.baidu.com", getContext());
+            }
+        });
         mTextView_db.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +138,7 @@ public class FrgPdetail extends BaseFrg {
             Frame.HANDLES.sentAll("FrgWd", 0, null);
         } else if (methodName.equals("20002")) {
             mModelPdetail = (ModelPdetail) F.json2Model(content, ModelPdetail.class);
-            mMImageView_bg.setObj("http://insurance.inrnui.com" + mModelPdetail.data.rows.path);
+            mMImageView_bg.setObj(mModelPdetail.data.rows.path);
             mTextView_title.setText(mModelPdetail.data.rows.title);
             mTextView_qx.setText(mModelPdetail.data.rows.desc);
             mTextView_price.setText(mModelPdetail.data.rows.price);

@@ -26,6 +26,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/mTextView_gw"
             style="@style/text_style_13_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,6 +45,7 @@
             android:text="或" />
 
         <TextView
+            android:id="@+id/mTextView_phone"
             style="@style/text_style_13_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

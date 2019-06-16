@@ -19,7 +19,7 @@ import com.ndtlg.dbbx.R;
 
 
 public class FrgHome extends BaseFrg {
-
+//    http://api.inrnui.com/index.php/16
     public LinearLayout mLinearLayout_content;
     public SlidingFragment mSlidingFragment;
     public android.support.v4.app.FragmentManager fragmentManager;

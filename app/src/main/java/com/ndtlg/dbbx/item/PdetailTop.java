@@ -61,7 +61,7 @@ public class PdetailTop extends BaseItem{
     }
 
     public void set(ModelPdetail.DataBean.FieldsBean item){
-        mTextView_left.setText(item.title);
+        mTextView_left.setText(item.name);
         mTextView_content.setText(item.value);
     }
     

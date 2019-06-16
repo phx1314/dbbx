@@ -13,6 +13,7 @@ package com.ndtlg.dbbx.item;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,7 +93,7 @@ public class Zj extends BaseItem {
             public void onClick(View v) {
                 BeanSc mBeanSc = new BeanSc();
                 mBeanSc.id = Integer.valueOf(item.id);
-                mBeanSc.status = item.collect.equals("0") ? 1 : 0;
+                mBeanSc.status = TextUtils.isEmpty(item.collect)||item.collect.equals("0") ? 1 : 0;
                 HttpUtil.loadJsonUrl(context, BaseConfig.getUri(), new Gson().toJson(mBeanSc), new HttpResponseListener(context, Zj.this, "20012", true));
                 item.collect = mBeanSc.status + "";
             }
@@ -137,7 +138,8 @@ public class Zj extends BaseItem {
 //        mTextView_age.setText();
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
-        if (item.collect.equals("0")) {
+
+        if (TextUtils.isEmpty(item.collect)||item.collect.equals("0")) {
             mTextView_sc.setText("收藏");
             mTextView_sc.setTextColor(context.getResources().getColor(R.color.A));
             mTextView_sc.setCompoundDrawablesWithIntrinsicBounds(R.drawable.bt_shoucang_n, 0, 0, 0);

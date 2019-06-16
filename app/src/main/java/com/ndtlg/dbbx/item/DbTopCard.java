@@ -26,7 +26,7 @@ import com.ndtlg.dbbx.model.ModelDbDetail;
 import com.ndtlg.dbbx.view.AnimateScrollView;
 
 
-public class DbTopCard extends BaseItemCard {
+public class DbTopCard extends BaseItemCard implements CompoundButton.OnCheckedChangeListener {
     public ToggleButton mToggleButton;
     public AnimateScrollView scrollView;
     public LinearLayout mLinearLayout_content;
@@ -53,16 +53,13 @@ public class DbTopCard extends BaseItemCard {
         mToggleButton = (ToggleButton) findViewById(R.id.mToggleButton);
         scrollView = (AnimateScrollView) findViewById(R.id.scrollView);
         mLinearLayout_content = (LinearLayout) findViewById(R.id.mLinearLayout_content);
-        mToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Frame.HANDLES.sentAll("FrgDb", 0, isChecked);
-            }
-        });
 
     }
 
     public void set(Object mFreeRecyclerView, ModelDbDetail mModelDbDetail) {
+        mToggleButton.setOnCheckedChangeListener(null);
+        mToggleButton.setChecked(mModelDbDetail.ischecked);
+        mToggleButton.setOnCheckedChangeListener(this);
         scrollView.setTag(mFreeRecyclerView);
         mLinearLayout_content.removeAllViews();
         for (ModelDbDetail.DataBean.ColumnsBean mColumnsBean : mModelDbDetail.data.columns) {
@@ -82,4 +79,8 @@ public class DbTopCard extends BaseItemCard {
     }
 
 
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        Frame.HANDLES.sentAll("FrgDb", 0, b);
+    }
 }

@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/j5dp"
             android:padding="@dimen/j15dp"
-            android:text="轻症保额"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -33,7 +33,7 @@
             android:layout_marginTop="@dimen/j5dp"
             android:paddingLeft="@dimen/j15dp"
             android:paddingRight="@dimen/j15dp"
-            android:text="dsadsadsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsaddsadsadd" />
+            android:text="" />
 
         <ImageView
             android:layout_width="match_parent"

@@ -21,8 +21,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.framewidget.frg.FrgPtDetail;
 import com.google.gson.Gson;
 import com.mdx.framework.Frame;
+import com.mdx.framework.activity.NoTitleAct;
 import com.mdx.framework.activity.TitleAct;
 import com.mdx.framework.utility.Helper;
 import com.mdx.framework.widget.MImageView;
@@ -63,7 +65,7 @@ public class FrgWd extends BaseFrg {
     public TextView mTextView_4;
     public LinearLayout mLinearLayout_zj;
     public LinearLayout mLinearLayout_sc;
-
+    public ModelUser mModelUser;
 
     @Override
     protected void create(Bundle savedInstanceState) {
@@ -110,6 +112,13 @@ public class FrgWd extends BaseFrg {
             @Override
             public void onClick(View v) {
                 Helper.startActivity(getContext(), FrgZj.class, TitleAct.class);
+            }
+        });
+        mTextView_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mModelUser != null)
+                    Helper.startActivity(getContext(), FrgPtDetail.class, NoTitleAct.class, "url", mModelUser.data.url, "title", "知识保险库");
             }
         });
         mLinearLayout_sc.setOnClickListener(new View.OnClickListener() {
@@ -268,7 +277,7 @@ public class FrgWd extends BaseFrg {
             loaddata();
             Frame.HANDLES.sentAll("FrgCart", 1, null);
         } else if (methodName.equals("userinfo")) {
-            ModelUser mModelUser = (ModelUser) F.json2Model(content, ModelUser.class);
+            mModelUser = (ModelUser) F.json2Model(content, ModelUser.class);
             mMImageView.setObj(mModelUser.data.rows.headimage);
             mMImageView.setCircle(true);
             mTextView_name.setText(mModelUser.data.rows.nickname);

@@ -64,6 +64,7 @@ public class DialogDb extends BaseItem {
     public void set(Dialog item, ModelData mModelData) {
         this.item = item;
         mTextView_title.setText(mModelData.name);
+        mTextView_content.setText(mModelData.tips);
     }
 
 

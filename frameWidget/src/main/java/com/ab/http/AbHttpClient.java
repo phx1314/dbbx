@@ -82,6 +82,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -836,9 +837,9 @@ public class AbHttpClient {
                     }
 
                     if (urlConn.getResponseCode() == HttpStatus.SC_OK) {
-                        resultString = readString(urlConn.getInputStream());
+                        resultString = readStringNew(urlConn.getInputStream());
                     } else {
-                        resultString = readString(urlConn.getErrorStream());
+                        resultString = readStringNew(urlConn.getErrorStream());
                     }
                     AbLogUtil.i(mContext, "[HTTP POST]Result:" + resultString);
                     urlConn.getInputStream().close();
@@ -1571,7 +1572,21 @@ public class AbHttpClient {
             return false;
         }
     };
+    private String readStringNew(InputStream is) {
+        StringBuffer rst = new StringBuffer();
+        char[] buffer = new char[2048];
+        int len = 0;
+        try {
+            InputStreamReader mInputStreamReader = new InputStreamReader(is, "UTF-8");
+            while ((len = mInputStreamReader.read(buffer)) > 0) {
+                rst.append(new String(buffer, 0, len));
+            }
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rst.toString();
+    }
     private String readString(InputStream is) {
         StringBuffer rst = new StringBuffer();
 

@@ -95,12 +95,12 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
                         ids += item.contrast_id + ",";
                         cid1 = Integer.valueOf(item.cid1);
                         cid2 = Integer.valueOf(item.cid2);
-                        if (TextUtils.isEmpty(category_name2)) {
-                            category_name2 = item.category_name2;
-                        } else if (!category_name2.equals(item.category_name2)) {
-                            Helper.toast("请选择同类产品对比", getContext());
-                            return;
-                        }
+//                        if (TextUtils.isEmpty(category_name2)) {
+//                            category_name2 = item.category_name2;
+//                        } else if (!category_name2.equals(item.category_name2)) {
+//                            Helper.toast("请选择同类产品对比", getContext());
+//                            return;
+//                        }
                     }
                 }
                 if (TextUtils.isEmpty(ids)) {

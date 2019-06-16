@@ -52,6 +52,7 @@ public class FrgDb extends BaseFrg {
     public int cid2;
     public CardAdapter mCardAdapter;
     public TextView mTextView_tb;
+    public ModelDbDetail mModelDbDetail;
 
     @Override
     protected void create(Bundle savedInstanceState) {
@@ -101,6 +102,7 @@ public class FrgDb extends BaseFrg {
 
     public void refreashData(boolean isChecked) {
         List<Card> list = new ArrayList<>();
+        mCardDbTop.mModelDbDetail.ischecked = isChecked;
         list.add(mCardDbTop);
         for (ModelData mModelData : mModelDatas) {
             if (isChecked && mModelData.isAllSame) {
@@ -134,7 +136,7 @@ public class FrgDb extends BaseFrg {
                 com.framewidget.F.showCenterDialog(getContext(), view1, new CallBackOnly() {
                     @Override
                     public void goReturnDo(Dialog mDialog) {
-                        ((DialogTb) view1.getTag()).set(mDialog);
+                        ((DialogTb) view1.getTag()).set(mDialog,mModelDbDetail);
                     }
                 });
             }
@@ -151,7 +153,7 @@ public class FrgDb extends BaseFrg {
 
     @Override
     public void onSuccess(String methodName, String content) {
-        ModelDbDetail mModelDbDetail = (ModelDbDetail) F.json2Model(content, ModelDbDetail.class);
+        mModelDbDetail = (ModelDbDetail) F.json2Model(content, ModelDbDetail.class);
         List<Card> list = new ArrayList<>();
         mCardDbTop = new CardDbTop(getContext(), mFreeRecyclerView, mModelDbDetail);
         list.add(mCardDbTop);
@@ -159,7 +161,7 @@ public class FrgDb extends BaseFrg {
         for (int i = 0; i < mModelDbDetail.data.columns.size(); i++) {
             for (int j = 0; j < mModelDbDetail.data.columns.get(i).fields.size(); j++) {
                 if (i == 0) {
-                    ModelData mModelData = new ModelData(mModelDbDetail.data.columns.get(i).fields.get(j).name);
+                    ModelData mModelData = new ModelData(mModelDbDetail.data.columns.get(i).fields.get(j).name, mModelDbDetail.data.columns.get(i).fields.get(j).tips);
                     mModelData.values.add(mModelDbDetail.data.columns.get(i).fields.get(j).value);
                     mModelDatas.add(mModelData);
                 } else {

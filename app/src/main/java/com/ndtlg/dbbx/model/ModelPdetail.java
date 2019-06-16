@@ -14,7 +14,7 @@ public class ModelPdetail implements Serializable {
      * status : 100
      * action : 20002
      * msg : 获取产品详情成功！
-     * data : {"rows":{"id":"1","cid1":"1","cid2":"7","title":"泰山重疾险","desc":"泰山重疾险简介","price":"121.00","collect":"0","path":"/Uploads/Images/2019-01-06/5c320f4729a85.png","category_name1":"人身保险","category_name2":"少儿"},"fields":[{"title":"少儿特定重疾保险金","value":"11"},{"title":"到期领取","value":"22"},{"title":"0岁男","value":"33"},{"title":"0岁女","value":"44"},{"title":"疫苗意外伤害","value":"55"},{"title":"免疫失效身故保险金","value":"66"},{"title":"疫苗医疗","value":"77"},{"title":"儿童个人责任补贴","value":"88"},{"title":"儿童走失搜寻保险金","value":"99"},{"title":"儿童绑架救助保险金","value":"00"}]}
+     * data : {"rows":{"id":"84","cid1":"3","cid2":"23","title":"个人百万综合意外保险","desc":"","price":"0.00","collect":"0","insure_condition":"[\"6-65岁\",\"\",\"1月-1年\",\"30-80万\",\"1份\",\"趸交\",\"\",\"\",\"\"]","accident_protection":"[\"10-50万\",\"\",\"按伤残等级比例赔付\",\"\",\"\",\"\",\"\",\"\",\"30-80万\",\"10-50万\",\"10-50万\",\"10-50万\",\"\",\"1-5万\",\"\",\"60-250元\\/天\",\"\",\"\",\"\",\"\"]","remarks":"身故残疾节假日双倍赔付","relief":null,"show_link":null,"buy_link":null,"contact_number":null,"path":"http://insurance.inrnui.com/Uploads/Images/2019-01-05/5c3046e0316d9.jpg","category_name1":"团体保险","category_name2":"员工"},"fields":[{"name":"投保年龄","tips":"说明一","value":"6-65岁"},{"name":"可续保至","tips":"说明二","value":""},{"name":"保障时长","tips":"说明三","value":"1月-1年"},{"name":"保障额度","tips":"说明四","value":"30-80万"},{"name":"购买份数","tips":null,"value":"1份"},{"name":"交费方式","tips":null,"value":"趸交"},{"name":"缴费期","tips":null,"value":""},{"name":"等待期","tips":"说明5","value":""},{"name":"犹豫期","tips":null,"value":""},{"name":"身故保险金","tips":null,"value":"10-50万"},{"name":"病故保险金","tips":null,"value":""},{"name":"残疾保险金","tips":null,"value":"按伤残等级比例赔付"},{"name":"医疗运送","tips":null,"value":""},{"name":"住院医疗（报销）","tips":null,"value":""},{"name":"医疗补偿","tips":null,"value":""},{"name":"陪护金","tips":null,"value":""},{"name":"特殊赔付","tips":null,"value":""},{"name":"飞机意外","tips":null,"value":"30-80万"},{"name":"火车意外","tips":null,"value":"10-50万"},{"name":"轮船意外","tips":null,"value":"10-50万"},{"name":"汽车意外","tips":null,"value":"10-50万"},{"name":"其他交通意外","tips":null,"value":""},{"name":"意外医疗（报销）","tips":null,"value":"1-5万"},{"name":"急性病医疗（报销）","tips":null,"value":""},{"name":"津贴","tips":null,"value":"60-250元/天"},{"name":"津贴天数","tips":null,"value":""},{"name":"个人过失责任","tips":null,"value":""},{"name":"随身行李","tips":null,"value":""},{"name":"盗抢","tips":null,"value":""}]}
      */
 
     public int status;
@@ -24,8 +24,8 @@ public class ModelPdetail implements Serializable {
 
     public static class DataBean {
         /**
-         * rows : {"id":"1","cid1":"1","cid2":"7","title":"泰山重疾险","desc":"泰山重疾险简介","price":"121.00","collect":"0","path":"/Uploads/Images/2019-01-06/5c320f4729a85.png","category_name1":"人身保险","category_name2":"少儿"}
-         * fields : [{"title":"少儿特定重疾保险金","value":"11"},{"title":"到期领取","value":"22"},{"title":"0岁男","value":"33"},{"title":"0岁女","value":"44"},{"title":"疫苗意外伤害","value":"55"},{"title":"免疫失效身故保险金","value":"66"},{"title":"疫苗医疗","value":"77"},{"title":"儿童个人责任补贴","value":"88"},{"title":"儿童走失搜寻保险金","value":"99"},{"title":"儿童绑架救助保险金","value":"00"}]
+         * rows : {"id":"84","cid1":"3","cid2":"23","title":"个人百万综合意外保险","desc":"","price":"0.00","collect":"0","insure_condition":"[\"6-65岁\",\"\",\"1月-1年\",\"30-80万\",\"1份\",\"趸交\",\"\",\"\",\"\"]","accident_protection":"[\"10-50万\",\"\",\"按伤残等级比例赔付\",\"\",\"\",\"\",\"\",\"\",\"30-80万\",\"10-50万\",\"10-50万\",\"10-50万\",\"\",\"1-5万\",\"\",\"60-250元\\/天\",\"\",\"\",\"\",\"\"]","remarks":"身故残疾节假日双倍赔付","relief":null,"show_link":null,"buy_link":null,"contact_number":null,"path":"http://insurance.inrnui.com/Uploads/Images/2019-01-05/5c3046e0316d9.jpg","category_name1":"团体保险","category_name2":"员工"}
+         * fields : [{"name":"投保年龄","tips":"说明一","value":"6-65岁"},{"name":"可续保至","tips":"说明二","value":""},{"name":"保障时长","tips":"说明三","value":"1月-1年"},{"name":"保障额度","tips":"说明四","value":"30-80万"},{"name":"购买份数","tips":null,"value":"1份"},{"name":"交费方式","tips":null,"value":"趸交"},{"name":"缴费期","tips":null,"value":""},{"name":"等待期","tips":"说明5","value":""},{"name":"犹豫期","tips":null,"value":""},{"name":"身故保险金","tips":null,"value":"10-50万"},{"name":"病故保险金","tips":null,"value":""},{"name":"残疾保险金","tips":null,"value":"按伤残等级比例赔付"},{"name":"医疗运送","tips":null,"value":""},{"name":"住院医疗（报销）","tips":null,"value":""},{"name":"医疗补偿","tips":null,"value":""},{"name":"陪护金","tips":null,"value":""},{"name":"特殊赔付","tips":null,"value":""},{"name":"飞机意外","tips":null,"value":"30-80万"},{"name":"火车意外","tips":null,"value":"10-50万"},{"name":"轮船意外","tips":null,"value":"10-50万"},{"name":"汽车意外","tips":null,"value":"10-50万"},{"name":"其他交通意外","tips":null,"value":""},{"name":"意外医疗（报销）","tips":null,"value":"1-5万"},{"name":"急性病医疗（报销）","tips":null,"value":""},{"name":"津贴","tips":null,"value":"60-250元/天"},{"name":"津贴天数","tips":null,"value":""},{"name":"个人过失责任","tips":null,"value":""},{"name":"随身行李","tips":null,"value":""},{"name":"盗抢","tips":null,"value":""}]
          */
 
         public RowsBean rows;
@@ -33,16 +33,23 @@ public class ModelPdetail implements Serializable {
 
         public static class RowsBean {
             /**
-             * id : 1
-             * cid1 : 1
-             * cid2 : 7
-             * title : 泰山重疾险
-             * desc : 泰山重疾险简介
-             * price : 121.00
+             * id : 84
+             * cid1 : 3
+             * cid2 : 23
+             * title : 个人百万综合意外保险
+             * desc :
+             * price : 0.00
              * collect : 0
-             * path : /Uploads/Images/2019-01-06/5c320f4729a85.png
-             * category_name1 : 人身保险
-             * category_name2 : 少儿
+             * insure_condition : ["6-65岁","","1月-1年","30-80万","1份","趸交","","",""]
+             * accident_protection : ["10-50万","","按伤残等级比例赔付","","","","","","30-80万","10-50万","10-50万","10-50万","","1-5万","","60-250元\/天","","","",""]
+             * remarks : 身故残疾节假日双倍赔付
+             * relief : null
+             * show_link : null
+             * buy_link : null
+             * contact_number : null
+             * path : http://insurance.inrnui.com/Uploads/Images/2019-01-05/5c3046e0316d9.jpg
+             * category_name1 : 团体保险
+             * category_name2 : 员工
              */
 
             public String id;
@@ -52,6 +59,13 @@ public class ModelPdetail implements Serializable {
             public String desc;
             public String price;
             public String collect;
+            public String insure_condition;
+            public String accident_protection;
+            public String remarks;
+            public Object relief;
+            public Object show_link;
+            public Object buy_link;
+            public Object contact_number;
             public String path;
             public String category_name1;
             public String category_name2;
@@ -59,11 +73,13 @@ public class ModelPdetail implements Serializable {
 
         public static class FieldsBean {
             /**
-             * title : 少儿特定重疾保险金
-             * value : 11
+             * name : 投保年龄
+             * tips : 说明一
+             * value : 6-65岁
              */
 
-            public String title;
+            public String name;
+            public String tips;
             public String value;
         }
     }

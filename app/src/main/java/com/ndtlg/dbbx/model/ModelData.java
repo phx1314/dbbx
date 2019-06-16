@@ -12,11 +12,13 @@ public class ModelData implements Serializable {
 
 
     public String name;
+    public String tips;
     public boolean isAllSame=true;
 
     public List<String> values = new ArrayList<>();
 
-    public ModelData(String name) {
+    public ModelData(String name,String tips) {
         this.name = name;
+        this.tips = tips;
     }
 }
