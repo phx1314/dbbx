@@ -106,8 +106,8 @@ public class FrgTj extends BaseFrg {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 BeanTj mBeanTj = new BeanTj();
-//                mBeanTj.cid1 = Integer.valueOf(mModelTj.data.category.get(mRadioGroup.getCheckedRadioButtonId()).id);
-//                mBeanTj.cid2 = Integer.valueOf(mModelTj.data.category.get(mRadioGroup.getCheckedRadioButtonId()).child.get(mRadioGroup2.getCheckedRadioButtonId()).id);
+                mBeanTj.cid1 = Integer.valueOf(mModelTj.data.category.get(mRadioGroup.getCheckedRadioButtonId()).id);
+                mBeanTj.cid2 = Integer.valueOf(mModelTj.data.category.get(mRadioGroup.getCheckedRadioButtonId()).child.get(mRadioGroup2.getCheckedRadioButtonId()).id);
                 mListView.setJsonApiLoadParams("", mBeanTj);
             }
         });
