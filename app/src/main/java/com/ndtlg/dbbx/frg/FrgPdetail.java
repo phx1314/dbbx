@@ -12,15 +12,18 @@
 package com.ndtlg.dbbx.frg;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.framewidget.frg.FrgPtDetail;
 import com.framewidget.view.MListView;
 import com.google.gson.Gson;
 import com.mdx.framework.Frame;
+import com.mdx.framework.activity.IndexAct;
 import com.mdx.framework.activity.NoTitleAct;
 import com.mdx.framework.utility.Helper;
 import com.mdx.framework.widget.ActionBar;
@@ -54,6 +57,8 @@ public class FrgPdetail extends BaseFrg {
     public TextView mTextView_jbxx;
     public ModelAbout mModelAbout_1;
     public ModelAbout mModelAbout_2;
+    public TextView mTextView_count;
+    public RelativeLayout mRelativeLayout;
 
     @Override
     protected void create(Bundle savedInstanceState) {
@@ -61,6 +66,20 @@ public class FrgPdetail extends BaseFrg {
         setContentView(R.layout.frg_pdetail);
         initView();
         loaddata();
+    }
+
+    @Override
+    public void disposeMsg(int type, Object obj) {
+        switch (type) {
+            case 0:
+                if (Integer.valueOf(obj.toString()) < 0) {
+                    mTextView_count.setVisibility(View.GONE);
+                } else {
+                    mTextView_count.setVisibility(View.VISIBLE);
+                    mTextView_count.setText(Integer.valueOf(obj.toString()) > 99 ? "99" : obj.toString());
+                }
+                break;
+        }
     }
 
     private void initView() {
@@ -80,6 +99,8 @@ public class FrgPdetail extends BaseFrg {
         mTextView_db = (TextView) findViewById(R.id.mTextView_db);
         mTextView_tk = (TextView) findViewById(R.id.mTextView_tk);
         mTextView_jbxx = (TextView) findViewById(R.id.mTextView_jbxx);
+        mTextView_count = (TextView) findViewById(R.id.mTextView_count);
+        mRelativeLayout = (RelativeLayout) findViewById(R.id.mRelativeLayout);
         mTextView_sc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +108,12 @@ public class FrgPdetail extends BaseFrg {
                 mBeanSc.id = Integer.valueOf(id);
                 mBeanSc.status = mModelPdetail.data.rows.collect.equals("0") ? 1 : 0;
                 loadJsonUrl("20012", new Gson().toJson(mBeanSc));
+            }
+        });
+        mRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Helper.startActivity(getContext(), Intent.FLAG_ACTIVITY_CLEAR_TOP, FrgHome.class, IndexAct.class, "position", 2);
             }
         });
         mImageButton_back.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +157,12 @@ public class FrgPdetail extends BaseFrg {
         loadJsonUrl("60005", new Gson().toJson(new BeanPub(60005)));
         loadJsonUrl("60006", new Gson().toJson(new BeanPub(60006)));
 //        loadJsonUrl("20002", new Gson().toJson(new BeanPdetail(1)));
+        if (F.count < 0) {
+            mTextView_count.setVisibility(View.GONE);
+        } else {
+            mTextView_count.setVisibility(View.VISIBLE);
+            mTextView_count.setText(F.count > 99 ? "99" : F.count + "");
+        }
     }
 
     @Override
@@ -155,7 +188,7 @@ public class FrgPdetail extends BaseFrg {
         } else if (methodName.equals("20012")) {
             loadJsonUrl("20002", new Gson().toJson(new BeanPdetail(Integer.valueOf(id))));
         } else if (methodName.equals("20011")) {
-            Helper.toast("加入对比成功！", getContext());
+            Helper.toast("已添加！", getContext());
             Frame.HANDLES.sentAll("FrgCart", 1, null);
         } else if (methodName.equals("60005")) {
             mModelAbout_1 = (ModelAbout) F.json2Model(content, ModelAbout.class);

@@ -120,7 +120,7 @@ public class Pub extends BaseItem {
             mTextView_title.setText(Html.fromHtml(name));
         }
         mTextView_xh.setText(item.category_name2);
-//        mTextView_age.setText();
+        mTextView_age.setText("简介："+item.desc);
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
         if (item.collect.equals("0")) {

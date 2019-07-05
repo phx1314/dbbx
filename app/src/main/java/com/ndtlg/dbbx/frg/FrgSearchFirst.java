@@ -12,6 +12,7 @@
 package com.ndtlg.dbbx.frg;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -40,6 +41,7 @@ public class FrgSearchFirst extends BaseFrg {
     public ListView mListView;
     public EditText mEditText;
     public View view_top;
+    public TextView mTextView_search;
 
     @Override
     protected void create(Bundle savedInstanceState) {
@@ -69,10 +71,15 @@ public class FrgSearchFirst extends BaseFrg {
         mTextView_cancel = (TextView) findViewById(R.id.mTextView_cancel);
         mListView = (ListView) findViewById(R.id.mListView);
         mEditText = (EditText) findViewById(R.id.mEditText);
+        mTextView_search = (TextView) findViewById(R.id.mTextView_search);
         mEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_GO) {
+                    if (TextUtils.isEmpty(mEditText.getText().toString())) {
+                        Helper.toast("请输入", getContext());
+                        return true;
+                    }
                     Helper.startActivity(getContext(), FrgSearch.class, NoTitleAct.class, "key", mEditText.getText().toString());
                     return true;
                 }
@@ -85,6 +92,16 @@ public class FrgSearchFirst extends BaseFrg {
             @Override
             public void onClick(View v) {
                 FrgSearchFirst.this.finish();
+            }
+        });
+        mTextView_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(mEditText.getText().toString())) {
+                    Helper.toast("请输入", getContext());
+                    return;
+                }
+                Helper.startActivity(getContext(), FrgSearch.class, NoTitleAct.class, "key", mEditText.getText().toString());
             }
         });
     }

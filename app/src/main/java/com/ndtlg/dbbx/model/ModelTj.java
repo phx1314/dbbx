@@ -46,6 +46,7 @@ public class ModelTj implements Serializable {
             public String collect;
             public String category_name1;
             public String category_name2;
+            public String desc;
             public String collect_id;
             public String contrast_id;
             public String create_date;

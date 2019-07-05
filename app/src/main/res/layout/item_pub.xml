@@ -50,11 +50,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/j2dp"
-                android:text="保障年龄：30天-70周岁" />
+                android:text="简介：" />
 
             <TextView
                 android:id="@+id/mTextView_qx"
                 style="@style/text_style_11_gray"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/j2dp"

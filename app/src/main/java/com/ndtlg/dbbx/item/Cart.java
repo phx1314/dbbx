@@ -83,7 +83,7 @@ public class Cart extends SwipMoreView implements CompoundButton.OnCheckedChange
      */
     public int getPositionForSection(String category_name2) {
         for (int i = 0; i < mAdaCart.getCount(); i++) {
-            if (category_name2.equals(mAdaCart.get(i).category_name2)) {
+            if (category_name2.equals(mAdaCart.get(i).category_name1)) {
                 return i;
             }
         }
@@ -94,7 +94,7 @@ public class Cart extends SwipMoreView implements CompoundButton.OnCheckedChange
         this.item = item;
         this.mAdaCart = mAdaCart;
         mMImageView.setObj("http://insurance.inrnui.com" + item.path);
-        if (position == getPositionForSection(item.category_name2)) {
+        if (position == getPositionForSection(item.category_name1)) {
             mTextView_typename.setVisibility(View.VISIBLE);
         } else {
             mTextView_typename.setVisibility(View.GONE);
@@ -102,7 +102,7 @@ public class Cart extends SwipMoreView implements CompoundButton.OnCheckedChange
         mTextView_typename.setText(item.category_name1);
         mTextView_title.setText(item.title);
         mTextView_xh.setText(item.category_name2);
-//        mTextView_age.setText();
+        mTextView_age.setText("简介："+item.desc);
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
 

@@ -42,7 +42,6 @@ import com.mdx.framework.adapter.MAdapter;
  * The Class AbPullListView.
  */
 public class AbPullListView extends BaseListView implements OnScrollListener {
-
     /**
      * The m last y.
      */

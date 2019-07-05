@@ -229,6 +229,36 @@
                 android:textSize="13sp" />
         </LinearLayout>
 
+        <RelativeLayout
+            android:id="@+id/mRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/text_style_13_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/j2dp"
+                android:drawableTop="@drawable/duibi"
+                android:gravity="center"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingRight="@dimen/j10dp"
+                android:text="对比" />
+
+
+            <TextView
+                android:id="@+id/mTextView_count"
+                style="@style/text_style_13_white"
+                android:layout_width="@dimen/j16dp"
+                android:layout_height="@dimen/j16dp"
+                android:layout_marginLeft="@dimen/j20dp"
+                android:layout_marginTop="@dimen/j5dp"
+                android:background="@drawable/rm_duibi"
+                android:gravity="center"
+                android:text="0" />
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/mTextView_db"
             style="@style/text_style_15_white"

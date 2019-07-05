@@ -135,7 +135,7 @@ public class Zj extends BaseItem {
         } else {
             mTextView_time.setVisibility(View.GONE);
         }
-//        mTextView_age.setText();
+        mTextView_age.setText("简介："+item.desc);
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
 

@@ -69,7 +69,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/j2dp"
-                android:text="保障期限：终身" />
+                android:text="保障期限：终身"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,7 +93,8 @@
                     android:layout_weight="1"
                     android:text="元/年起" />
 
-                <TextView   android:id="@+id/mTextView_db"
+                <TextView
+                    android:id="@+id/mTextView_db"
                     style="@style/text_style_13_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

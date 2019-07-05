@@ -79,6 +79,7 @@ public class FrgSearch extends BaseFrg {
     }
 
     private void saveHistory() {
+        mEditText.setSelection(mEditText.getText().length());
         if (!data_history.contains(key)) {
             data_history.add(key);
             F.saveJson("history", new Gson().toJson(data_history));

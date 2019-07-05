@@ -112,7 +112,7 @@ public class Sc extends BaseItem {
         mMImageView.setObj("http://insurance.inrnui.com" + item.path);
         mTextView_title.setText(item.title);
         mTextView_xh.setText(item.category_name2);
-//        mTextView_age.setText();
+        mTextView_age.setText("简介："+item.desc);
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
 

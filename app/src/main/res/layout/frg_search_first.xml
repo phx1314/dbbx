@@ -28,13 +28,19 @@
             android:singleLine="true" />
 
         <TextView
+            android:id="@+id/mTextView_search"
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="@dimen/j10dp"
+            android:text="搜索" />
+
+        <TextView
             android:id="@+id/mTextView_cancel"
             style="@style/text_style_15_black"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="@dimen/j10dp"
-            android:paddingLeft="@dimen/j10dp"
-            android:paddingRight="@dimen/j10dp"
             android:text="取消" />
     </LinearLayout>
 

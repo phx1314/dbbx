@@ -27,6 +27,7 @@ import java.util.List;
 
 public class F {
     public static String uid;
+    public static int count;
 
     public static void init() {
         SharedPreferences sp = PreferenceManager

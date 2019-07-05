@@ -18,8 +18,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.ab.view.listener.AbOnListListener;
 import com.ab.view.listener.AbOnListViewListener;
 import com.ab.view.pullview.AbPullListView;
+import com.google.gson.Gson;
+import com.mdx.framework.Frame;
 import com.mdx.framework.activity.TitleAct;
 import com.mdx.framework.adapter.MAdapter;
 import com.mdx.framework.utility.Helper;
@@ -27,6 +30,7 @@ import com.ndtlg.dbbx.F;
 import com.ndtlg.dbbx.R;
 import com.ndtlg.dbbx.ada.AdaCart;
 import com.ndtlg.dbbx.bean.BeanDbList;
+import com.ndtlg.dbbx.bean.BeanDeleteAll;
 import com.ndtlg.dbbx.model.ModelDblist;
 import com.ndtlg.dbbx.model.ModelTj;
 
@@ -41,6 +45,7 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
     public AbPullListView mListView;
     public CheckBox mCheckBox;
     public TextView mTextView_db;
+    public TextView mTextView_delete;
 
 
     @Override
@@ -74,11 +79,43 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
         findVMethod();
     }
 
+    @Override
+    public void onSuccess(String methodName, String content) {
+        if (methodName.equals("20014")) {
+            Helper.toast("删除成功", getContext());
+            mListView.pullLoad();
+        }
+    }
+
     private void findVMethod() {
         mListView = (AbPullListView) findViewById(R.id.mListView);
         mCheckBox = (CheckBox) findViewById(R.id.mCheckBox);
         mTextView_db = (TextView) findViewById(R.id.mTextView_db);
-
+        mTextView_delete = (TextView) findViewById(R.id.mTextView_delete);
+        mListView.setAbOnListListener(new AbOnListListener() {
+            @Override
+            public void onRefresh() {
+                mCheckBox.setOnCheckedChangeListener(null);
+                mCheckBox.setChecked(false);
+                mCheckBox.setOnCheckedChangeListener(FrgCart.this);
+            }
+        });
+        mTextView_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String ids = "";
+                for (ModelTj.DataBean.ColumnsBean item : ((AdaCart) mListView.getmAdapter()).getList()) {
+                    if (item.isChecked) {
+                        ids += item.id + ",";
+                    }
+                }
+                if (TextUtils.isEmpty(ids)) {
+                    Helper.toast("请选择产品", getContext());
+                    return;
+                }
+                loadJsonUrl("20014", new Gson().toJson(new BeanDeleteAll(ids.substring(0, ids.length() - 1))));
+            }
+        });
         mTextView_db.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,10 +156,13 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
             @Override
             public MAdapter onSuccess(String methodName, String content) {
                 ModelDblist mModelDblist = (ModelDblist) F.json2Model(content, ModelDblist.class);
+
                 List<ModelTj.DataBean.ColumnsBean> list = new ArrayList<ModelTj.DataBean.ColumnsBean>();
                 for (List<ModelTj.DataBean.ColumnsBean> data : mModelDblist.data.columns) {
                     list.addAll(data);
                 }
+                F.count = list.size();
+                Frame.HANDLES.sentAll("FrgPdetail", 0, list.size());
                 return new AdaCart(getContext(), list);
             }
         });

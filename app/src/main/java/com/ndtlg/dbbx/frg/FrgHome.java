@@ -19,14 +19,15 @@ import com.ndtlg.dbbx.R;
 
 
 public class FrgHome extends BaseFrg {
-//    http://api.inrnui.com/index.php/16
+    //    http://api.inrnui.com/index.php/16
     public LinearLayout mLinearLayout_content;
     public SlidingFragment mSlidingFragment;
     public android.support.v4.app.FragmentManager fragmentManager;
-
+    public int position;
 
     @Override
     protected void create(Bundle savedInstanceState) {
+        position = getActivity().getIntent().getIntExtra("position", 0);
         setContentView(R.layout.frg_home);
         initView();
         loaddata();
@@ -69,6 +70,7 @@ public class FrgHome extends BaseFrg {
         mSlidingFragment.addContentView(new FrgWd(), "我的",
                 R.drawable.btn_checked_4);
         mSlidingFragment.setOffscreenPageLimit(4);
+        mSlidingFragment.setFistShow(position);
     }
 
 
