@@ -43,7 +43,8 @@ public class ModelTj implements Serializable {
             public String title;
             public String price;
             public String path;
-            public String collect;
+            public String is_collect ;
+            public String is_contrast;
             public String category_name1;
             public String category_name2;
             public String desc;

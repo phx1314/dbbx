@@ -72,6 +72,9 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
             case 1:
                 mListView.setJsonApiLoadParams("", new BeanDbList());
                 break;
+            case 2:
+                mListView.getmAdapter().clear();
+                break;
         }
     }
 

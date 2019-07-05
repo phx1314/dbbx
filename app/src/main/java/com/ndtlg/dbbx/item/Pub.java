@@ -33,6 +33,7 @@ import com.ndtlg.dbbx.bean.BeanDb;
 import com.ndtlg.dbbx.bean.BeanSc;
 import com.ndtlg.dbbx.model.ModelTj;
 
+import static com.ndtlg.dbbx.F.uid;
 import static com.ndtlg.dbbx.frg.FrgSearch.key;
 
 
@@ -80,20 +81,29 @@ public class Pub extends BaseItem {
         mTextView_db.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (TextUtils.isEmpty(uid)) {
+                    Helper.toast("请登录", context);
+                    return;
+                }
                 BeanDb mBeanDb = new BeanDb();
                 mBeanDb.id = Integer.valueOf(item.id);
-                mBeanDb.status = 1;
+                mBeanDb.status = item.is_contrast.equals("0") ? 1 : 0;
                 HttpUtil.loadJsonUrl(context, BaseConfig.getUri(), new Gson().toJson(mBeanDb), new HttpResponseListener(context, Pub.this, "20011", true));
+                item.is_contrast = mBeanDb.status + "";
             }
         });
         mTextView_sc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (TextUtils.isEmpty(uid)) {
+                    Helper.toast("请登录", context);
+                    return;
+                }
                 BeanSc mBeanSc = new BeanSc();
                 mBeanSc.id = Integer.valueOf(item.id);
-                mBeanSc.status = item.collect.equals("0") ? 1 : 0;
+                mBeanSc.status = item.is_collect.equals("0") ? 1 : 0;
                 HttpUtil.loadJsonUrl(context, BaseConfig.getUri(), new Gson().toJson(mBeanSc), new HttpResponseListener(context, Pub.this, "20012", true));
-                item.collect = mBeanSc.status + "";
+                item.is_collect = mBeanSc.status + "";
             }
         });
     }
@@ -101,7 +111,7 @@ public class Pub extends BaseItem {
     @Override
     public void onSuccess(String methodName, String content) {
         if (methodName.equals("20011")) {
-            Helper.toast("加入对比成功！", context);
+            mAdaPub.notifyDataSetChanged();
             Frame.HANDLES.sentAll("FrgCart", 1, null);
         } else if (methodName.equals("20012")) {
             mAdaPub.notifyDataSetChanged();
@@ -120,10 +130,10 @@ public class Pub extends BaseItem {
             mTextView_title.setText(Html.fromHtml(name));
         }
         mTextView_xh.setText(item.category_name2);
-        mTextView_age.setText("简介："+item.desc);
+        mTextView_age.setText("简介：" + item.desc);
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
-        if (item.collect.equals("0")) {
+        if (item.is_collect.equals("0")) {
             mTextView_sc.setText("收藏");
             mTextView_sc.setTextColor(context.getResources().getColor(R.color.A));
             mTextView_sc.setCompoundDrawablesWithIntrinsicBounds(R.drawable.bt_shoucang_n, 0, 0, 0);
@@ -131,6 +141,13 @@ public class Pub extends BaseItem {
             mTextView_sc.setText("已收藏");
             mTextView_sc.setTextColor(context.getResources().getColor(R.color.gray));
             mTextView_sc.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        }
+        if (item.is_contrast.equals("0")) {
+            mTextView_db.setText("+  对比");
+            mTextView_db.setTextColor(context.getResources().getColor(R.color.A));
+        } else {
+            mTextView_db.setText("已加入对比");
+            mTextView_db.setTextColor(context.getResources().getColor(R.color.gray));
         }
     }
 

@@ -42,6 +42,11 @@ public class FrgEj extends BaseFrg {
         loaddata();
     }
 
+    @Override
+    public void disposeMsg(int type, Object obj) {
+        mListView.pullLoad();
+    }
+
     private void initView() {
         findVMethod();
     }

@@ -46,6 +46,9 @@ public class FrgSelect extends BaseFrg {
                 Frame.HANDLES.sentAll("FrgDb", 2, obj);
                 this.finish();
                 break;
+            case  1:
+                mListView.pullLoad();
+                break;
         }
     }
 

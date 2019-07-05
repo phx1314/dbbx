@@ -82,7 +82,7 @@ public class FrgMain extends BaseFrg {
             public void onClick(View v) {
                 try {
                     for (ModelTj.DataBean.CategoryBean mCategoryBean : mModelTj.data.category) {
-                        if (mCategoryBean.title.equals("人身保险")) {
+                        if (mCategoryBean.title.equals("人寿保险")) {
                             Helper.startActivity(getContext(), FrgEj.class, TitleAct.class, "mCategoryBean", mCategoryBean);
                             break;
                         }

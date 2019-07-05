@@ -111,6 +111,10 @@ public class FrgWd extends BaseFrg {
         mLinearLayout_zj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (TextUtils.isEmpty(uid)) {
+                    Helper.toast("请登录", getContext());
+                    return;
+                }
                 Helper.startActivity(getContext(), FrgZj.class, TitleAct.class);
             }
         });
@@ -124,6 +128,10 @@ public class FrgWd extends BaseFrg {
         mLinearLayout_sc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (TextUtils.isEmpty(uid)) {
+                    Helper.toast("请登录", getContext());
+                    return;
+                }
                 Helper.startActivity(getContext(), FrgSc.class, TitleAct.class);
             }
         });
@@ -256,6 +264,8 @@ public class FrgWd extends BaseFrg {
         } else {
             mLinearLayout_ydl.setVisibility(View.GONE);
             mLinearLayout_wdl.setVisibility(View.VISIBLE);
+            mTextView_sc.setText("0");
+            mTextView_zj.setText("0");
         }
     }
 

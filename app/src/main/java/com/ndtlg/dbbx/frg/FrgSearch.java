@@ -75,6 +75,9 @@ public class FrgSearch extends BaseFrg {
                 saveHistory();
                 mAbPullListView.setJsonApiLoadParams("", new BeanMhSearch(mEditText.getText().toString()));
                 break;
+            case 1:
+                mAbPullListView.pullLoad();
+                break;
         }
     }
 

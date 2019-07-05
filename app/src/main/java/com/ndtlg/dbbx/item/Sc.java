@@ -78,8 +78,9 @@ public class Sc extends BaseItem {
             public void onClick(View v) {
                 BeanDb mBeanDb = new BeanDb();
                 mBeanDb.id = Integer.valueOf(item.id);
-                mBeanDb.status = 1;
+                mBeanDb.status =  item.is_contrast.equals("0") ? 1 : 0;
                 HttpUtil.loadJsonUrl(context, BaseConfig.getUri(), new Gson().toJson(mBeanDb), new HttpResponseListener(context, Sc.this, "20011", true));
+                item.is_contrast = mBeanDb.status + "";
             }
         });
         mImageView_del.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +99,7 @@ public class Sc extends BaseItem {
         if (methodName.equals("20011")) {
             Helper.toast("加入对比成功！", context);
             Frame.HANDLES.sentAll("FrgCart", 1, null);
+            mAdaSc.notifyDataSetChanged();
         } else if (methodName.equals("20012")) {
             Helper.toast("删除成功！", context);
             mAdaSc.remove(item);
@@ -112,10 +114,16 @@ public class Sc extends BaseItem {
         mMImageView.setObj("http://insurance.inrnui.com" + item.path);
         mTextView_title.setText(item.title);
         mTextView_xh.setText(item.category_name2);
-        mTextView_age.setText("简介："+item.desc);
+        mTextView_age.setText("简介：" + item.desc);
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
-
+        if (item.is_contrast.equals("0")) {
+            mTextView_db.setText("+  对比");
+            mTextView_db.setTextColor(context.getResources().getColor(R.color.A));
+        } else {
+            mTextView_db.setText("已加入对比");
+            mTextView_db.setTextColor(context.getResources().getColor(R.color.gray));
+        }
     }
 
 

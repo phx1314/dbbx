@@ -13,14 +13,19 @@ package com.ndtlg.dbbx.frg;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
 import com.ab.view.listener.AbOnListViewListener;
 import com.ab.view.pullview.AbPullListView;
+import com.google.gson.Gson;
+import com.mdx.framework.Frame;
 import com.mdx.framework.adapter.MAdapter;
+import com.mdx.framework.utility.Helper;
 import com.mdx.framework.widget.ActionBar;
 import com.ndtlg.dbbx.F;
 import com.ndtlg.dbbx.R;
 import com.ndtlg.dbbx.ada.AdaZj;
+import com.ndtlg.dbbx.bean.BeanClearZj;
 import com.ndtlg.dbbx.bean.BeanZjList;
 import com.ndtlg.dbbx.model.ModelPlist;
 
@@ -59,8 +64,22 @@ public class FrgZj extends BaseFrg {
     }
 
     @Override
+    public void onSuccess(String methodName, String content) {
+        Helper.toast("操作成功",getContext());
+        Frame.HANDLES.sentAll("FrgWd", 0, null);
+        mAbPullListView.pullLoad();
+    }
+
+    @Override
     public void setActionBar(ActionBar actionBar, Context context) {
         super.setActionBar(actionBar, context);
         mHeadlayout.setTitle("足迹");
+        mHeadlayout.setRText("清空");
+        mHeadlayout.setRightOnclicker(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadJsonUrl("30030", new Gson().toJson(new BeanClearZj( )));
+            }
+        });
     }
 }

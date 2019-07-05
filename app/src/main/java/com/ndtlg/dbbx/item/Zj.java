@@ -84,8 +84,9 @@ public class Zj extends BaseItem {
             public void onClick(View v) {
                 BeanDb mBeanDb = new BeanDb();
                 mBeanDb.id = Integer.valueOf(item.id);
-                mBeanDb.status = 1;
+                mBeanDb.status = item.is_contrast.equals("0") ? 1 : 0;
                 HttpUtil.loadJsonUrl(context, BaseConfig.getUri(), new Gson().toJson(mBeanDb), new HttpResponseListener(context, Zj.this, "20011", true));
+                item.is_contrast = mBeanDb.status + "";
             }
         });
         mTextView_sc.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +94,9 @@ public class Zj extends BaseItem {
             public void onClick(View v) {
                 BeanSc mBeanSc = new BeanSc();
                 mBeanSc.id = Integer.valueOf(item.id);
-                mBeanSc.status = TextUtils.isEmpty(item.collect)||item.collect.equals("0") ? 1 : 0;
+                mBeanSc.status = TextUtils.isEmpty(item.is_collect) || item.is_collect.equals("0") ? 1 : 0;
                 HttpUtil.loadJsonUrl(context, BaseConfig.getUri(), new Gson().toJson(mBeanSc), new HttpResponseListener(context, Zj.this, "20012", true));
-                item.collect = mBeanSc.status + "";
+                item.is_collect = mBeanSc.status + "";
             }
         });
     }
@@ -117,6 +118,7 @@ public class Zj extends BaseItem {
         if (methodName.equals("20011")) {
             Helper.toast("加入对比成功！", context);
             Frame.HANDLES.sentAll("FrgCart", 1, null);
+            mAdaZj.notifyDataSetChanged();
         } else if (methodName.equals("20012")) {
             mAdaZj.notifyDataSetChanged();
             Frame.HANDLES.sentAll("FrgWd", 0, null);
@@ -135,11 +137,11 @@ public class Zj extends BaseItem {
         } else {
             mTextView_time.setVisibility(View.GONE);
         }
-        mTextView_age.setText("简介："+item.desc);
+        mTextView_age.setText("简介：" + item.desc);
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
 
-        if (TextUtils.isEmpty(item.collect)||item.collect.equals("0")) {
+        if (item.is_collect.equals("0")) {
             mTextView_sc.setText("收藏");
             mTextView_sc.setTextColor(context.getResources().getColor(R.color.A));
             mTextView_sc.setCompoundDrawablesWithIntrinsicBounds(R.drawable.bt_shoucang_n, 0, 0, 0);
@@ -147,6 +149,13 @@ public class Zj extends BaseItem {
             mTextView_sc.setText("已收藏");
             mTextView_sc.setTextColor(context.getResources().getColor(R.color.gray));
             mTextView_sc.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        }
+        if (item.is_contrast.equals("0")) {
+            mTextView_db.setText("+  对比");
+            mTextView_db.setTextColor(context.getResources().getColor(R.color.A));
+        } else {
+            mTextView_db.setText("已加入对比");
+            mTextView_db.setTextColor(context.getResources().getColor(R.color.gray));
         }
     }
 

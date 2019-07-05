@@ -58,7 +58,8 @@ public class ModelPdetail implements Serializable {
             public String title;
             public String desc;
             public String price;
-            public String collect;
+            public String is_collect ;
+            public String is_contrast;
             public String insure_condition;
             public String accident_protection;
             public String remarks;

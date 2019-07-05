@@ -14,6 +14,7 @@ package com.ndtlg.dbbx.frg;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
@@ -38,6 +39,8 @@ import com.ndtlg.dbbx.bean.BeanPub;
 import com.ndtlg.dbbx.bean.BeanSc;
 import com.ndtlg.dbbx.model.ModelAbout;
 import com.ndtlg.dbbx.model.ModelPdetail;
+
+import static com.ndtlg.dbbx.F.uid;
 
 
 public class FrgPdetail extends BaseFrg {
@@ -109,7 +112,7 @@ public class FrgPdetail extends BaseFrg {
             public void onClick(View v) {
                 BeanSc mBeanSc = new BeanSc();
                 mBeanSc.id = Integer.valueOf(id);
-                mBeanSc.status = mModelPdetail.data.rows.collect.equals("0") ? 1 : 0;
+                mBeanSc.status = mModelPdetail.data.rows.is_collect.equals("0") ? 1 : 0;
                 loadJsonUrl("20012", new Gson().toJson(mBeanSc));
             }
         });
@@ -136,8 +139,9 @@ public class FrgPdetail extends BaseFrg {
             public void onClick(View v) {
                 BeanDb mBeanDb = new BeanDb();
                 mBeanDb.id = Integer.valueOf(id);
-                mBeanDb.status = 1;
+                mBeanDb.status = mModelPdetail.data.rows.is_contrast.equals("0") ? 1 : 0;
                 loadJsonUrl("20011", new Gson().toJson(mBeanDb));
+
             }
         });
         mTextView_tk.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +159,11 @@ public class FrgPdetail extends BaseFrg {
     }
 
     public void loaddata() {
+        if (TextUtils.isEmpty(uid)) {
+            Helper.toast("请登录", getContext());
+            finish();
+            return;
+        }
         loadJsonUrl("20013", new Gson().toJson(new BeanAddzj(Integer.valueOf(id))));
         loadJsonUrl("20002", new Gson().toJson(new BeanPdetail(Integer.valueOf(id))));
         loadJsonUrl("60005", new Gson().toJson(new BeanPub(60005)));
@@ -178,7 +187,7 @@ public class FrgPdetail extends BaseFrg {
             mTextView_title.setText(mModelPdetail.data.rows.title);
             mTextView_qx.setText(mModelPdetail.data.rows.desc);
             mTextView_price.setText(mModelPdetail.data.rows.price);
-            if (mModelPdetail.data.rows.collect.equals("0")) {
+            if (mModelPdetail.data.rows.is_collect.equals("0")) {
                 mTextView_sc.setText("收藏");
                 mTextView_sc.setTextColor(getResources().getColor(R.color.A));
                 mTextView_sc.setCompoundDrawablesWithIntrinsicBounds(R.drawable.bt_shoucang_n, 0, 0, 0);
@@ -187,13 +196,24 @@ public class FrgPdetail extends BaseFrg {
                 mTextView_sc.setTextColor(getResources().getColor(R.color.gray));
                 mTextView_sc.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
             }
+            if (mModelPdetail.data.rows.is_contrast.equals("0")) {
+                mTextView_db.setText("加入对比");
+                mTextView_db.setBackgroundColor(getResources().getColor(R.color.A));
+            } else {
+                mTextView_db.setText("取消对比");
+                mTextView_db.setBackgroundColor(getResources().getColor(R.color.gray));
+            }
             mMListView1.setAdapter(new AdaPdetailTop(getContext(), mModelPdetail.data.fields));
-            mScrollView.smoothScrollTo(0,0);
+            mScrollView.smoothScrollTo(0, 0);
+            Frame.HANDLES.sentAll("FrgWd", 0, null);
         } else if (methodName.equals("20012")) {
+            Frame.HANDLES.sentAll("FrgWd", 0, null);
+            Frame.HANDLES.sentAll("FrgTj,FrgEj,FrgSelect,FrgSearch", 1, null);
             loadJsonUrl("20002", new Gson().toJson(new BeanPdetail(Integer.valueOf(id))));
+
         } else if (methodName.equals("20011")) {
-            Helper.toast("已添加！", getContext());
-            Frame.HANDLES.sentAll("FrgCart", 1, null);
+            Frame.HANDLES.sentAll("FrgCart,FrgTj,FrgEj,FrgSelect,FrgSearch", 1, null);
+            loadJsonUrl("20002", new Gson().toJson(new BeanPdetail(Integer.valueOf(id))));
         } else if (methodName.equals("60005")) {
             mModelAbout_1 = (ModelAbout) F.json2Model(content, ModelAbout.class);
 

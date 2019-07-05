@@ -79,7 +79,7 @@
                     android:id="@+id/mTextView_db"
                     style="@style/text_style_13_black"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/j25dp"
                     android:background="@drawable/bt_grey"
                     android:gravity="center"
                     android:paddingLeft="@dimen/j13dp"
