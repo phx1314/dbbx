@@ -84,6 +84,9 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
         if (methodName.equals("20014")) {
             Helper.toast("删除成功", getContext());
             mListView.pullLoad();
+            mCheckBox.setOnCheckedChangeListener(null);
+            mCheckBox.setChecked(false);
+            mCheckBox.setOnCheckedChangeListener(FrgCart.this);
         }
     }
 

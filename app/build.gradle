@@ -40,4 +40,5 @@ android {
 
 dependencies {
     compile project(':frameWidget')
+    compile 'com.pgyersdk:sdk:2.8.1'
 }

@@ -80,7 +80,7 @@ public class FrgSearch extends BaseFrg {
 
     private void saveHistory() {
         mEditText.setSelection(mEditText.getText().length());
-        if (!data_history.contains(key)) {
+        if (!data_history.contains(key)&&!TextUtils.isEmpty(mEditText.getText().toString())) {
             data_history.add(key);
             F.saveJson("history", new Gson().toJson(data_history));
             Frame.HANDLES.sentAll("FrgSearchFirst", 0, null);

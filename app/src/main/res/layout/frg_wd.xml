@@ -268,7 +268,7 @@
                 android:drawableRight="@drawable/bt_jintu_n"
                 android:gravity="center_vertical"
                 android:padding="@dimen/j12dp"
-                android:text="分享好友" />
+                android:text="推荐给好友" />
 
             <ImageView
                 android:layout_width="match_parent"

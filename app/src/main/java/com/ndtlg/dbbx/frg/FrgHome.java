@@ -11,11 +11,16 @@
 
 package com.ndtlg.dbbx.frg;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.framewidget.newMenu.SlidingFragment;
 import com.ndtlg.dbbx.R;
+import com.pgyersdk.javabean.AppBean;
+import com.pgyersdk.update.PgyUpdateManager;
+import com.pgyersdk.update.UpdateManagerListener;
 
 
 public class FrgHome extends BaseFrg {
@@ -31,6 +36,38 @@ public class FrgHome extends BaseFrg {
         setContentView(R.layout.frg_home);
         initView();
         loaddata();
+        PgyUpdateManager.register(getActivity(),
+                new UpdateManagerListener() {
+                    @Override
+                    public void onUpdateAvailable(final String result) {
+                        try { // 将新版本信息封装到AppBean中
+                            final AppBean appBean = getAppBeanFromString(result);
+                            new AlertDialog.Builder(getContext())
+                                    .setTitle("版本更新")
+                                    .setMessage("检查到新版本，是否更新")
+                                    .setNegativeButton(
+                                            "确定",
+                                            new DialogInterface.OnClickListener() {
+
+                                                @Override
+                                                public void onClick(
+                                                        DialogInterface dialog,
+                                                        int which) {
+                                                    startDownloadTask(
+                                                            getActivity(),
+                                                            appBean.getDownloadURL());
+                                                }
+                                            }).show();
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onNoUpdateAvailable() {
+                    }
+                });
     }
 
     @Override

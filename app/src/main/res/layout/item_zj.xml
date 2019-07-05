@@ -92,7 +92,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="元/年起" />
-
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
                 <TextView
                     android:id="@+id/mTextView_db"
                     style="@style/text_style_13_black"
@@ -110,7 +114,7 @@
                     style="@style/text_style_13_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/j5dp"
+                    android:layout_marginTop="@dimen/j5dp"
                     android:background="@drawable/bt_grey"
                     android:drawableLeft="@drawable/bt_shoucang_n"
                     android:drawablePadding="@dimen/j5dp"
@@ -118,7 +122,7 @@
                     android:paddingLeft="@dimen/j12dp"
                     android:paddingRight="@dimen/j12dp"
                     android:text="收藏"
-                    android:textColor="@color/A" />
+                    android:textColor="@color/A" /></LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

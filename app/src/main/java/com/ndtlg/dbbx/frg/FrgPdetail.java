@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.framewidget.frg.FrgPtDetail;
@@ -59,6 +60,7 @@ public class FrgPdetail extends BaseFrg {
     public ModelAbout mModelAbout_2;
     public TextView mTextView_count;
     public RelativeLayout mRelativeLayout;
+    public ScrollView mScrollView;
 
     @Override
     protected void create(Bundle savedInstanceState) {
@@ -101,6 +103,7 @@ public class FrgPdetail extends BaseFrg {
         mTextView_jbxx = (TextView) findViewById(R.id.mTextView_jbxx);
         mTextView_count = (TextView) findViewById(R.id.mTextView_count);
         mRelativeLayout = (RelativeLayout) findViewById(R.id.mRelativeLayout);
+        mScrollView = (ScrollView) findViewById(R.id.mScrollView);
         mTextView_sc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,6 +188,7 @@ public class FrgPdetail extends BaseFrg {
                 mTextView_sc.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
             }
             mMListView1.setAdapter(new AdaPdetailTop(getContext(), mModelPdetail.data.fields));
+            mScrollView.smoothScrollTo(0,0);
         } else if (methodName.equals("20012")) {
             loadJsonUrl("20002", new Gson().toJson(new BeanPdetail(Integer.valueOf(id))));
         } else if (methodName.equals("20011")) {
