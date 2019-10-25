@@ -32,6 +32,7 @@ import com.ndtlg.dbbx.item.SearchFirstTop;
 import com.ndtlg.dbbx.model.ModelSearch;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -58,6 +59,7 @@ public class FrgSearchFirst extends BaseFrg {
                 }.getType());
                 if (data_history == null)
                     data_history = new ArrayList<>();
+                Collections.reverse(data_history);
                 mListView.setAdapter(new AdaSearchFirst(getContext(), data_history));
                 break;
         }
@@ -121,6 +123,7 @@ public class FrgSearchFirst extends BaseFrg {
             }.getType());
             if (data_history == null)
                 data_history = new ArrayList<>();
+            Collections.reverse(data_history);
             mListView.setAdapter(new AdaSearchFirst(getContext(), data_history));
         }
     }

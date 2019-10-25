@@ -32,6 +32,7 @@ public class FrgHome extends BaseFrg {
 
     @Override
     protected void create(Bundle savedInstanceState) {
+
         position = getActivity().getIntent().getIntExtra("position", 0);
         setContentView(R.layout.frg_home);
         initView();
@@ -44,7 +45,7 @@ public class FrgHome extends BaseFrg {
                             final AppBean appBean = getAppBeanFromString(result);
                             new AlertDialog.Builder(getContext())
                                     .setTitle("版本更新")
-                                    .setMessage("检查到新版本，是否更新")
+                                    .setMessage("检查到新版本，是否更新").setCancelable(false)
                                     .setNegativeButton(
                                             "确定",
                                             new DialogInterface.OnClickListener() {

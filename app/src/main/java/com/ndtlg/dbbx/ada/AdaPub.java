@@ -50,8 +50,8 @@ public class AdaPub extends MAdapter<ModelTj.DataBean.ColumnsBean> {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!TextUtils.isEmpty(from) && from.equals("FrgSelect")) {
-                    Frame.HANDLES.sentAll("FrgSelect", 0, item.contrast_id);
+                if (!TextUtils.isEmpty(from) && from.equals("FrgDb")) {
+                    Frame.HANDLES.sentAll("FrgSearch", 2, item.id);
                 } else {
                     Helper.startActivity(getContext(), FrgPdetail.class, NoTitleAct.class, "id", item.id);
                 }

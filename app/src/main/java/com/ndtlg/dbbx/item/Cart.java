@@ -102,13 +102,14 @@ public class Cart extends SwipMoreView implements CompoundButton.OnCheckedChange
         mTextView_typename.setText(item.category_name1);
         mTextView_title.setText(item.title);
         mTextView_xh.setText(item.category_name2);
-        mTextView_age.setText("简介："+item.desc);
+        mTextView_age.setText("简介：" + item.desc);
 //        mTextView_qx.setText();
         mTextView_price.setText(item.price);
 
         mCheckBox.setOnCheckedChangeListener(null);
         mCheckBox.setChecked(item.isChecked);
         mCheckBox.setOnCheckedChangeListener(this);
+        reset();
     }
 
     @Override
@@ -140,6 +141,7 @@ public class Cart extends SwipMoreView implements CompoundButton.OnCheckedChange
     public void onSuccess(String methodName, String content) {
         if (methodName.equals("20011")) {
             Helper.toast("删除成功！", getContext());
+            Frame.HANDLES.sentAll("FrgTj", 1, null);
             mAdaCart.remove(item);
         }
     }

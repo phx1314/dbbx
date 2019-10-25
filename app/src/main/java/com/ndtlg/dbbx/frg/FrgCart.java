@@ -46,6 +46,7 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
     public CheckBox mCheckBox;
     public TextView mTextView_db;
     public TextView mTextView_delete;
+    public TextView mTextView_edit;
 
 
     @Override
@@ -71,6 +72,9 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
                 break;
             case 1:
                 mListView.setJsonApiLoadParams("", new BeanDbList());
+                mCheckBox.setOnCheckedChangeListener(null);
+                mCheckBox.setChecked(false);
+                mCheckBox.setOnCheckedChangeListener(FrgCart.this);
                 break;
             case 2:
                 mListView.getmAdapter().clear();
@@ -86,6 +90,7 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
     public void onSuccess(String methodName, String content) {
         if (methodName.equals("20014")) {
             Helper.toast("删除成功", getContext());
+            Frame.HANDLES.sentAll("FrgTj",1,null);
             mListView.pullLoad();
             mCheckBox.setOnCheckedChangeListener(null);
             mCheckBox.setChecked(false);
@@ -98,6 +103,7 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
         mCheckBox = (CheckBox) findViewById(R.id.mCheckBox);
         mTextView_db = (TextView) findViewById(R.id.mTextView_db);
         mTextView_delete = (TextView) findViewById(R.id.mTextView_delete);
+        mTextView_edit = (TextView) findViewById(R.id.mTextView_edit);
         mListView.setAbOnListListener(new AbOnListListener() {
             @Override
             public void onRefresh() {
@@ -122,6 +128,26 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
                 loadJsonUrl("20014", new Gson().toJson(new BeanDeleteAll(ids.substring(0, ids.length() - 1))));
             }
         });
+        mTextView_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mTextView_edit.getText().toString().trim().equals("编辑")) {
+                    mTextView_delete.setVisibility(View.VISIBLE);
+                    mTextView_edit.setText("清除");
+                } else {
+                    mTextView_delete.setVisibility(View.GONE);
+                    mTextView_edit.setText("编辑");
+                    String ids = "";
+                    for (ModelTj.DataBean.ColumnsBean item : ((AdaCart) mListView.getmAdapter()).getList()) {
+                        ids += item.id + ",";
+                    }
+                    if (TextUtils.isEmpty(ids)) {
+                        return;
+                    }
+                    loadJsonUrl("20014", new Gson().toJson(new BeanDeleteAll(ids.substring(0, ids.length() - 1))));
+                }
+            }
+        });
         mTextView_db.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,12 +155,13 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
                     Helper.toast("请先登录", getContext());
                     return;
                 }
-                String category_name2 = "";
+                int num = 0;
                 String ids = "";
                 int cid1 = 0;
                 int cid2 = 0;
                 for (ModelTj.DataBean.ColumnsBean item : ((AdaCart) mListView.getmAdapter()).getList()) {
                     if (item.isChecked) {
+                        num++;
                         ids += item.contrast_id + ",";
                         cid1 = Integer.valueOf(item.cid1);
                         cid2 = Integer.valueOf(item.cid2);
@@ -148,6 +175,10 @@ public class FrgCart extends BaseFrg implements CompoundButton.OnCheckedChangeLi
                 }
                 if (TextUtils.isEmpty(ids)) {
                     Helper.toast("请选择对比产品", getContext());
+                    return;
+                }
+                if (!TextUtils.isEmpty(ids) && num == 1) {
+                    Helper.toast("请选择至少两个对比产品", getContext());
                     return;
                 }
                 Helper.startActivity(getContext(), FrgDb.class, TitleAct.class, "ids", ids.substring(0, ids.length() - 1), "cid1", cid1, "cid2", cid2);

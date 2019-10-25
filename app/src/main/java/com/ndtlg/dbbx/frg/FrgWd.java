@@ -245,7 +245,7 @@ public class FrgWd extends BaseFrg {
                                            Map<String, String> data) {
                         String opendid = data.get("uid");
                         String token = data.get("access_token");// outInfoe
-                        Log.i("qq=", opendid + ";" + token);
+                        dl(opendid, token, 10002);
                     }
 
                     @Override

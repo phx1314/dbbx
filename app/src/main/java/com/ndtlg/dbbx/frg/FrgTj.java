@@ -13,10 +13,10 @@ package com.ndtlg.dbbx.frg;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.ab.view.listener.AbOnListViewListener;
 import com.ab.view.pullview.AbPullListView;
@@ -39,7 +39,7 @@ public class FrgTj extends BaseFrg {
     public RadioGroup mRadioGroup2;
     public AbPullListView mListView;
     public ModelTj mModelTj;
-    public EditText mEditText;
+    public TextView mEditText;
 
     @Override
     protected void create(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class FrgTj extends BaseFrg {
         mRadioGroup = (RadioGroup) findViewById(R.id.mRadioGroup);
         mRadioGroup2 = (RadioGroup) findViewById(R.id.mRadioGroup2);
         mListView = (AbPullListView) findViewById(R.id.mListView);
-        mEditText = (EditText) findViewById(R.id.mEditText);
+        mEditText = (TextView) findViewById(R.id.mEditText);
         mEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

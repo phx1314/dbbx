@@ -45,6 +45,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:text="瑞泰退台重疾险" />
 
                 <TextView
@@ -92,37 +94,40 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="元/年起" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center|right"
                     android:orientation="vertical">
-                <TextView
-                    android:id="@+id/mTextView_db"
-                    style="@style/text_style_13_black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/j25dp"
-                    android:background="@drawable/bt_grey"
-                    android:gravity="center"
-                    android:paddingLeft="@dimen/j13dp"
-                    android:paddingRight="@dimen/j13dp"
-                    android:text="+  对比"
-                    android:textColor="@color/A" />
 
-                <TextView
-                    android:id="@+id/mTextView_sc"
-                    style="@style/text_style_13_black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/j25dp"
-                    android:layout_marginTop="@dimen/j5dp"
-                    android:background="@drawable/bt_grey"
-                    android:drawableLeft="@drawable/bt_shoucang_n"
-                    android:drawablePadding="@dimen/j5dp"
-                    android:gravity="center"
-                    android:paddingLeft="@dimen/j12dp"
-                    android:paddingRight="@dimen/j12dp"
-                    android:text="收藏"
-                    android:textColor="@color/A" /></LinearLayout>
+                    <TextView
+                        android:id="@+id/mTextView_db"
+                        style="@style/text_style_13_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/j25dp"
+                        android:background="@drawable/bt_grey"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/j13dp"
+                        android:paddingRight="@dimen/j13dp"
+                        android:text="+  对比"
+                        android:textColor="@color/A" />
+
+                    <TextView
+                        android:id="@+id/mTextView_sc"
+                        style="@style/text_style_13_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/j25dp"
+                        android:layout_marginTop="@dimen/j5dp"
+                        android:background="@drawable/bt_grey"
+                        android:drawableLeft="@drawable/bt_shoucang_n"
+                        android:drawablePadding="@dimen/j5dp"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/j12dp"
+                        android:paddingRight="@dimen/j12dp"
+                        android:text="收藏"
+                        android:textColor="@color/A" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

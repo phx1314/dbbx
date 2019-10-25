@@ -19,7 +19,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <EditText
+        <TextView
             android:id="@+id/mEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,6 @@
             android:background="@drawable/bt_grey"
             android:drawableLeft="@drawable/ic_sousuo"
             android:drawablePadding="@dimen/j5dp"
-            android:enabled="false"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/j15dp"
             android:paddingRight="@dimen/j8dp" />

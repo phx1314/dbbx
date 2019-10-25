@@ -21,7 +21,10 @@ import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 
 import com.mdx.framework.Frame;
+import com.mdx.framework.activity.NoTitleAct;
+import com.mdx.framework.utility.Helper;
 import com.ndtlg.dbbx.R;
+import com.ndtlg.dbbx.frg.FrgSearch;
 import com.ndtlg.dbbx.model.ModelDbDetail;
 import com.ndtlg.dbbx.view.AnimateScrollView;
 
@@ -72,8 +75,8 @@ public class DbTopCard extends BaseItemCard implements CompoundButton.OnCheckedC
         view_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Frame.HANDLES.sentAll("FrgDb", 4, null);
-
+//                Frame.HANDLES.sentAll("FrgDb", 4, null);
+                Helper.startActivity(context, FrgSearch.class, NoTitleAct.class, "key", "","from","FrgDb");
             }
         });
     }

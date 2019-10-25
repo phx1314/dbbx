@@ -9,8 +9,8 @@
         android:id="@+id/mImageView_add"
         android:layout_width="@dimen/j80dp"
         android:layout_height="@dimen/j80dp"
-        android:layout_marginLeft="@dimen/j10dp"
-        android:layout_marginRight="@dimen/j10dp"
+        android:layout_marginLeft="@dimen/j8dp"
+        android:layout_marginRight="@dimen/j8dp"
         android:background="@drawable/bt_tjbx_n" />
 </LinearLayout>
 

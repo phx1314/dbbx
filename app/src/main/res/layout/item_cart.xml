@@ -85,6 +85,8 @@
                                 android:id="@+id/mTextView_title"
                                 style="@style/text_style_15_black"
                                 android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:ellipsize="end"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="瑞泰退台重疾险" />

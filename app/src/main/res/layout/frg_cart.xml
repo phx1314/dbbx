@@ -16,16 +16,15 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="对比" />
-
         <TextView
-            android:id="@+id/mTextView_delete"
-            style="@style/text_style_15_black"
+            android:id="@+id/mTextView_edit"
+            style="@style/text_style_13_black"
             android:layout_width="wrap_content"
             android:layout_height="44dip"
             android:layout_alignParentRight="true"
             android:gravity="center"
             android:padding="@dimen/j10dp"
-            android:text="删除" />
+            android:text="编辑" />
     </RelativeLayout>
 
     <com.ab.view.pullview.AbPullListView
@@ -65,7 +64,20 @@
             android:layout_marginLeft="@dimen/j8dp"
             android:layout_weight="1"
             android:text="全选 " />
-
+        <TextView
+            android:id="@+id/mTextView_delete"
+            android:visibility="gone"
+            style="@style/text_style_15_white"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/A"
+            android:gravity="center"
+            android:paddingLeft="@dimen/j30dp"
+            android:paddingRight="@dimen/j30dp"
+            android:text="删除" />
+        <ImageView
+            android:layout_width="1px"
+            android:layout_height="match_parent" />
         <TextView
             android:id="@+id/mTextView_db"
             style="@style/text_style_15_white"

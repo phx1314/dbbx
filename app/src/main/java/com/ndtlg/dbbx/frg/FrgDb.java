@@ -108,6 +108,9 @@ public class FrgDb extends BaseFrg {
             if (isChecked && mModelData.isAllSame) {
                 continue;
             }
+            if (mModelData.isAllSame && TextUtils.isEmpty(mModelData.values.get(0))) {
+                continue;
+            }
             CardDb mCardDb = new CardDb(getContext(), mFreeRecyclerView, mModelData);
             list.add(mCardDb);
         }
@@ -136,7 +139,7 @@ public class FrgDb extends BaseFrg {
                 com.framewidget.F.showCenterDialog(getContext(), view1, new CallBackOnly() {
                     @Override
                     public void goReturnDo(Dialog mDialog) {
-                        ((DialogTb) view1.getTag()).set(mDialog,mModelDbDetail);
+                        ((DialogTb) view1.getTag()).set(mDialog, mModelDbDetail);
                     }
                 });
             }
@@ -173,6 +176,9 @@ public class FrgDb extends BaseFrg {
             }
         }
         for (ModelData mModelData : mModelDatas) {
+            if (mModelData.isAllSame && TextUtils.isEmpty(mModelData.values.get(0))) {
+                continue;
+            }
             CardDb mCardDb = new CardDb(getContext(), mFreeRecyclerView, mModelData);
             list.add(mCardDb);
         }

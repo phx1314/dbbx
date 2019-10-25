@@ -120,6 +120,9 @@
         <!-- *************************     related to Share END **************************** -->
         <!-- umengAppKey，replace to yours -->
         <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <meta-data
             android:name="UMENG_APPKEY"
             android:value="5c340ee4f1f556f326000973" />
         <meta-data

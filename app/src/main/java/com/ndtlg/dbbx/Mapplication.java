@@ -28,8 +28,10 @@ public class Mapplication extends Application {
         com.framewidget.F.WEIXINSEC = "df361218354c5024517f0088e8ef0c6e";
         com.framewidget.F.QQID = "1107999603";
         com.framewidget.F.QQSEC = "6LgAL1MyH1fkNSJz";
-        com.framewidget.F.SINAID = "2667591999";
-        com.framewidget.F.SiNASEC = "c796fc5dea7664b79878b9c50f7a25b3";
+//        com.framewidget.F.SINAID = "2667591999";
+//        com.framewidget.F.SiNASEC = "c796fc5dea7664b79878b9c50f7a25b3";
+        com.framewidget.F.SINAID = "2437806690";
+        com.framewidget.F.SiNASEC = "f3d00bfb3d2bf7a6e7145fc61e52b6d5";
         // 微信 wx12342956d1cab4f9,a5ae111de7d9ea137e88a5e02c07c94d
         PlatformConfig.setWeixin(com.framewidget.F.WEIXINID,
                 com.framewidget.F.WEIXINSEC);

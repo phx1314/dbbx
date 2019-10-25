@@ -34,7 +34,9 @@ import com.ndtlg.dbbx.F;
 import com.ndtlg.dbbx.R;
 import com.ndtlg.dbbx.ada.AdaPub;
 import com.ndtlg.dbbx.ada.AdaSearchPopSon;
+import com.ndtlg.dbbx.bean.BeanDb;
 import com.ndtlg.dbbx.bean.BeanMhSearch;
+import com.ndtlg.dbbx.model.ModelDb;
 import com.ndtlg.dbbx.model.ModelMhSearch;
 
 import java.util.ArrayList;
@@ -52,10 +54,12 @@ public class FrgSearch extends BaseFrg {
     public static String key;
     public ListView mListView;
     public List<String> data_history;
+    public String from;
 
     @Override
     protected void create(Bundle savedInstanceState) {
         key = getActivity().getIntent().getStringExtra("key");
+        from = getActivity().getIntent().getStringExtra("from");
         data_history = new Gson().fromJson(F.getJson("history"), new TypeToken<List<String>>() {
         }.getType());
         if (data_history == null)
@@ -78,12 +82,18 @@ public class FrgSearch extends BaseFrg {
             case 1:
                 mAbPullListView.pullLoad();
                 break;
+            case 2:
+                BeanDb mBeanDb = new BeanDb();
+                mBeanDb.id = Integer.valueOf(obj.toString());
+                mBeanDb.status = 1;
+                loadJsonUrl("20011", new Gson().toJson(mBeanDb));
+                break;
         }
     }
 
     private void saveHistory() {
         mEditText.setSelection(mEditText.getText().length());
-        if (!data_history.contains(key)&&!TextUtils.isEmpty(mEditText.getText().toString())) {
+        if (!data_history.contains(key) && !TextUtils.isEmpty(mEditText.getText().toString())) {
             data_history.add(key);
             F.saveJson("history", new Gson().toJson(data_history));
             Frame.HANDLES.sentAll("FrgSearchFirst", 0, null);
@@ -151,10 +161,9 @@ public class FrgSearch extends BaseFrg {
             @Override
             public MAdapter onSuccess(String methodName, String content) {
                 ModelMhSearch mModelTj = (ModelMhSearch) F.json2Model(content, ModelMhSearch.class);
-                return new AdaPub(getContext(), mModelTj.data.columns, "FrgSearch");
+                return new AdaPub(getContext(), mModelTj.data.columns, TextUtils.isEmpty(from) ? "FrgSearch" : from);
             }
         });
-
     }
 
     @Override
@@ -167,6 +176,12 @@ public class FrgSearch extends BaseFrg {
             } else {
                 mListView.setVisibility(View.GONE);
             }
+        } else if (methodName.equals("20011")) {
+            ModelDb mModelDb = (ModelDb) F.json2Model(content, ModelDb.class);
+            Frame.HANDLES.sentAll("FrgDb", 2, mModelDb.data.id);
+            Frame.HANDLES.sentAll("FrgCart", 1, null);
+            finish();
+
         }
     }
 }

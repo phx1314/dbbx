@@ -132,6 +132,7 @@ public class FrgSet extends BaseFrg {
         Frame.HANDLES.sentAll("FrgWd", 0, null);
         Frame.HANDLES.sentAll("FrgCart", 2, null);
         mTextView_logout.setVisibility(View.GONE);
+        finish();
     }
 
     public void loaddata() {

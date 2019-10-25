@@ -34,6 +34,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:text="瑞泰退台重疾险" />
 
                 <TextView
@@ -70,9 +72,9 @@
                         style="@style/text_style_11_gray"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"
                         android:layout_marginTop="@dimen/j2dp"
-                        android:text="保障期限：终身" />
+                        android:text="保障期限：终身"
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <TextView
